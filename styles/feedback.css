@@ -89,13 +89,21 @@ body{
   justify-self:start;
 }
 
-/* Rating column (middle) - simple visual dots placeholder */
+/* Rating column (middle) */
 .rating .rating-dots{
   display:flex;
   gap:12px;
   align-items:center;
 }
 
+/* Hide native radios (we use labels as circles) */
+.rating-dots input[type="radio"]{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Dot / button style */
 .dot{
   display:inline-flex;
   width:36px;
@@ -106,12 +114,28 @@ body{
   color:#fff;
   font-weight:700;
   box-shadow: 0 2px 0 rgba(0,0,0,0.12);
+  cursor:pointer;
+  user-select:none;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  font-size:1rem;
 }
 
 /* simple color mapping similar to the screenshot */
 .dot.bad{ background: #ff6b6b; }
 .dot.mid{ background: #ff9a3c; }
 .dot.good{ background: #52d869; }
+
+/* checked state - when the preceding input is checked */
+.rating-dots input[type="radio"]:checked + .dot{
+  transform: translateY(-6px);
+  box-shadow: 0 8px 0 rgba(0,0,0,0.16);
+  outline: 3px solid rgba(0,0,0,0.06);
+}
+
+/* keyboard focus */
+.rating-dots input[type="radio"]:focus-visible + .dot{
+  box-shadow: 0 6px 0 rgba(0,0,0,0.12), 0 0 0 6px rgba(17,194,111,0.12);
+}
 
 /* Comments column (right) */
 .comments textarea{

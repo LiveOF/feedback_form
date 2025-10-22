@@ -16,17 +16,25 @@
         <p class="question">How good is teaching at this class?</p>
 
         <div class="feedback-grid">
-          <!-- Row: example item (repeatable) -->
+          <!-- Row: Math -->
           <div class="subject">Math</div>
 
-          <div class="rating" aria-hidden="true">
-            <!-- visual placeholder for rating buttons -->
+          <div class="rating" role="radiogroup" aria-label="Math rating">
             <div class="rating-dots">
-              <span class="dot bad">1</span>
-              <span class="dot bad">2</span>
-              <span class="dot mid">3</span>
-              <span class="dot good">4</span>
-              <span class="dot good">5</span>
+              <input type="radio" id="math-1" name="math" value="1">
+              <label for="math-1" class="dot bad">1</label>
+
+              <input type="radio" id="math-2" name="math" value="2">
+              <label for="math-2" class="dot bad">2</label>
+
+              <input type="radio" id="math-3" name="math" value="3">
+              <label for="math-3" class="dot mid">3</label>
+
+              <input type="radio" id="math-4" name="math" value="4">
+              <label for="math-4" class="dot good">4</label>
+
+              <input type="radio" id="math-5" name="math" value="5">
+              <label for="math-5" class="dot good">5</label>
             </div>
           </div>
 
@@ -34,7 +42,58 @@
             <textarea placeholder="Describe your expressions here" rows="2"></textarea>
           </div>
 
-          <!-- More rows could be placed here (English, Code, etc.) -->
+          <!-- Row: English -->
+          <div class="subject">English</div>
+
+          <div class="rating" role="radiogroup" aria-label="English rating">
+            <div class="rating-dots">
+              <input type="radio" id="eng-1" name="english" value="1">
+              <label for="eng-1" class="dot bad">1</label>
+
+              <input type="radio" id="eng-2" name="english" value="2">
+              <label for="eng-2" class="dot bad">2</label>
+
+              <input type="radio" id="eng-3" name="english" value="3">
+              <label for="eng-3" class="dot mid">3</label>
+
+              <input type="radio" id="eng-4" name="english" value="4">
+              <label for="eng-4" class="dot good">4</label>
+
+              <input type="radio" id="eng-5" name="english" value="5">
+              <label for="eng-5" class="dot good">5</label>
+            </div>
+          </div>
+
+          <div class="comments">
+            <textarea placeholder="Describe your expressions here" rows="2"></textarea>
+          </div>
+
+          <!-- Row: Code -->
+          <div class="subject">Code</div>
+
+          <div class="rating" role="radiogroup" aria-label="Code rating">
+            <div class="rating-dots">
+              <input type="radio" id="code-1" name="code" value="1">
+              <label for="code-1" class="dot bad">1</label>
+
+              <input type="radio" id="code-2" name="code" value="2">
+              <label for="code-2" class="dot bad">2</label>
+
+              <input type="radio" id="code-3" name="code" value="3">
+              <label for="code-3" class="dot mid">3</label>
+
+              <input type="radio" id="code-4" name="code" value="4">
+              <label for="code-4" class="dot good">4</label>
+
+              <input type="radio" id="code-5" name="code" value="5">
+              <label for="code-5" class="dot good">5</label>
+            </div>
+          </div>
+
+          <div class="comments">
+            <textarea placeholder="Describe your expressions here" rows="2"></textarea>
+          </div>
+
         </div>
 
         <div class="actions">
