@@ -1,0 +1,173 @@
+/* Responsive styles for the feedback form container */
+
+/* Simple reset and page background */
+:root{
+  --container-max: 1000px;
+  --container-padding: 34px;
+  --accent: #11c26f;
+  --muted: #c7d7e7;
+  --card-bg: #fff;
+  --shadow: 0 6px 0 rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.12);
+  --radius: 14px;
+  --gap: 18px;
+  --break-sm: 700px;
+}
+
+*{box-sizing: border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #9fc2e4; /* page background shown in the reference */
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color:#111;
+  padding:28px;
+}
+
+/* Page centering wrapper */
+.page{
+  min-height: calc(100vh - 56px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Outer wrapper to control spacing (keeps consistent gutters on small screens) */
+.feedback-wrapper{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding: 18px;
+}
+
+/* The responsive container (main deliverable) */
+.feedback-container{
+  width: min(92%, var(--container-max));
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: var(--container-padding);
+  box-shadow: var(--shadow);
+  border: 2px solid rgba(0,0,0,0.06);
+}
+
+/* Title and header */
+.feedback-title{
+  display:inline-block;
+  margin: -46px auto 14px; /* visually like the reference */
+  background: var(--card-bg);
+  padding: 12px 26px;
+  border-radius: 24px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+  font-size: 1.1rem;
+  text-align:center;
+  font-weight:700;
+}
+
+/* Question text */
+.question{
+  font-size:1.1rem;
+  margin: 6px 0 22px;
+}
+
+/* The grid that holds rows: subject | rating | comments */
+.feedback-grid{
+  display:grid;
+  grid-template-columns: 180px 1fr 360px;
+  gap: var(--gap) 30px;
+  align-items:center;
+}
+
+/* Subject column (left) */
+.subject{
+  padding: 12px 18px;
+  border-radius: 18px;
+  border: 2px solid rgba(0,0,0,0.2);
+  text-align:center;
+  background: transparent;
+  font-size:1rem;
+  justify-self:start;
+}
+
+/* Rating column (middle) - simple visual dots placeholder */
+.rating .rating-dots{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.dot{
+  display:inline-flex;
+  width:36px;
+  height:36px;
+  border-radius:999px;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:700;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.12);
+}
+
+/* simple color mapping similar to the screenshot */
+.dot.bad{ background: #ff6b6b; }
+.dot.mid{ background: #ff9a3c; }
+.dot.good{ background: #52d869; }
+
+/* Comments column (right) */
+.comments textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.45);
+  resize:vertical;
+  font-size:0.95rem;
+}
+
+/* Actions row */
+.actions{
+  grid-column: 1 / -1;
+  display:flex;
+  justify-content:center;
+  margin-top: 28px;
+}
+
+.send{
+  background: linear-gradient(180deg, #12c66a, #0bb15a);
+  color:white;
+  border:none;
+  padding: 14px 46px;
+  border-radius:28px;
+  font-size:1.25rem;
+  font-weight:800;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.18);
+  cursor:pointer;
+}
+
+/* Responsive behaviour: stack columns on small screens */
+@media (max-width: 900px){
+  .feedback-grid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .subject{
+    justify-self:start;
+    width:auto;
+    padding-left:10px;
+  }
+
+  .comments textarea{
+    min-height:64px;
+  }
+
+  .actions{
+    margin-top:18px;
+  }
+}
+
+/* Tighter stacking for very small screens */
+@media (max-width: 420px){
+  .feedback-container{ padding:20px; }
+  .feedback-title{ font-size:0.95rem; padding:10px 18px; margin-top:-34px; }
+  .dot{ width:30px; height:30px; font-size:0.9rem; }
+}

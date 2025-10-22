@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feedback Form (Responsive Container)</title>
+  <link rel="stylesheet" href="styles/feedback.css" />
+</head>
+<body>
+  <main class="page">
+    <!-- Responsive feedback container -->
+    <section class="feedback-wrapper">
+      <div class="feedback-container" role="form" aria-label="Feedback form container">
+        <h1 class="feedback-title">Choose Your Feedback Here</h1>
+
+        <p class="question">How good is teaching at this class?</p>
+
+        <div class="feedback-grid">
+          <!-- Row: example item (repeatable) -->
+          <div class="subject">Math</div>
+
+          <div class="rating" aria-hidden="true">
+            <!-- visual placeholder for rating buttons -->
+            <div class="rating-dots">
+              <span class="dot bad">1</span>
+              <span class="dot bad">2</span>
+              <span class="dot mid">3</span>
+              <span class="dot good">4</span>
+              <span class="dot good">5</span>
+            </div>
+          </div>
+
+          <div class="comments">
+            <textarea placeholder="Describe your expressions here" rows="2"></textarea>
+          </div>
+
+          <!-- More rows could be placed here (English, Code, etc.) -->
+        </div>
+
+        <div class="actions">
+          <button class="send">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
