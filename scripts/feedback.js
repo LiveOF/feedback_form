@@ -129,7 +129,7 @@
       reset(rows);
     } catch (e) {
       console.error(e);
-      alert('Thanks for your feedback.'); // Thanks for your feedback. Failed to submit feedback. Please try again.
+      alert('Failed to submit feedback. Please try again.');
     }
   });
 
